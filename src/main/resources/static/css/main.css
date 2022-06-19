@@ -8,11 +8,6 @@
     opacity: 0.5;
 }
 
-/* CAT CONTAINER*/
-/*.cat-contents {*/
-/*    height: 100px;*/
-/*    width: 100px;*/
-/*}*/
 
 /*register form error styling*/
 .invalid-feedback {
@@ -109,20 +104,13 @@ html {
         display: block;
         overflow: scroll;
     }
-
-
-
 }
 
 
 /*Main Feed*/
 @media screen and (max-width: 389px) {
-
     #main-container {
         width: 90vw;
 
     }
-
-
-
 }
