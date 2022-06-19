@@ -1,3 +1,7 @@
+.active {
+    color: green;
+}
+
 a:hover.links{
     color: green;
     background-color: transparent;
@@ -27,9 +31,9 @@ a:hover {
 }
 
 /* selected link */
-a:active {
-    color: black;
-}
+/*a:active {*/
+/*    color: black;*/
+/*}*/
 
 a:link, a:visited, a:hover, a:active {
     text-underline: none;
@@ -43,4 +47,8 @@ a:link, a:visited, a:hover, a:active {
 .links{
     color: black;
 
+}
+
+li .active {
+    border-left: darkgreen solid 1px;
 }
