@@ -435,13 +435,13 @@ function makeModalBody(r){
                             </div>
                             <div>
                                 <button 
-                                    class="btn btn-secondary" 
+                                    class="btn-grad btn-secondary" 
                                     type="button" 
                                     data-dismiss="modal">
                                         Close
                                 </button>                                
                                 <button 
-                                    class="btn btn-primary" 
+                                    class="btn-grad btn-primary" 
                                     type="submit">
                                         Add to Your Feed
                                 </button>
