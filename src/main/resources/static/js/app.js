@@ -328,7 +328,7 @@ function makeCard(r){
                     <div class="card-footer bg-white border-0">
                         <button 
                             onclick="seeRecipeDetails(${r.id})"
-                            class="btn btn-secondary w-100" 
+                            class="btn-grad btn-secondary w-100" 
                             type="button" 
                             data-toggle="modal" 
                             data-target="#recipe-details-modal"
