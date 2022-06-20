@@ -50,19 +50,19 @@
                 <ul class="navbar-nav flex-row flex-end me-auto mb-1 mb-lg-0">
                     <li class="nav-item"
                         th:classappend="${#httpServletRequest.getRequestURI() == '/recipes' ? 'active' : ''}">
-                        <a class="links btn m-2 border-0" th:href="@{/recipes}">Feed</a>
+                        <a class="links navigationLink hover-underline btn m-2 border-0" th:href="@{/recipes}">Feed</a>
                     </li>
                     <li class="nav-item"
                         th:classappend="${#httpServletRequest.getRequestURI() == '/login' ? 'active' : ''}">
-                        <a class="links btn m-2 border-0" th:href="@{/login}">Login</a>
+                        <a class="links navigationLink hover-underline btn m-2 border-0" th:href="@{/login}">Login</a>
                     </li>
                     <li class="nav-item"
                         th:classappend="${#httpServletRequest.getRequestURI() == '/user/register' ? 'active' : ''}">
-                        <a class="links btn m-2 border-0" th:href="@{/user/register}">Register</a>
+                        <a class="links navigationLink hover-underline btn m-2 border-0" th:href="@{/user/register}">Register</a>
                     </li>
                     <li class="nav-item"
                         th:classappend="${#httpServletRequest.getRequestURI() == '/about' ? 'active' : ''}">
-                        <a class="links btn m-2 border-0" th:href="@{/about}">About</a>
+                        <a class="links navigationLink hover-underline btn m-2 border-0" th:href="@{/about}">About</a>
                     </li>
                 </ul>
             </div>
@@ -71,20 +71,20 @@
                 <ul class="navbar-nav flex-row flex-end me-auto">
                     <li class="nav-item m-2"
                         th:classappend="${#httpServletRequest.getRequestURI() == '/recipes' ? 'active' : ''}">
-                        <a class="links btn m-2 border-0" th:href="@{/recipes}">Feed</a>
+                        <a class="links navigationLink hover-underline btn m-2 border-0" th:href="@{/recipes}">Feed</a>
                     </li>
                     <li class="nav-item m-2"
                         th:classappend="${#httpServletRequest.getRequestURI() == '/user/profile' ? 'active' : ''}">
-                        <a class="links btn m-2 border-0" th:href="@{/user/profile}">Profile</a>
+                        <a class="links navigationLink hover-underline btn m-2 border-0" th:href="@{/user/profile}">Profile</a>
                     </li>
                     <li class="nav-item m-2"
                         th:classappend="${#httpServletRequest.getRequestURI() == '/about' ? 'active' : ''}">
-                        <a class="links btn m-2 border-0" th:href="@{/about}">About</a>
+                        <a class="links navigationLink hover-underline btn m-2 border-0" th:href="@{/about}">About</a>
                     </li>
                     <li class="nav-item m-2"
                         th:classappend="${#httpServletRequest.getRequestURI() == '/logout' ? 'active' : ''}">
                         <form th:action="@{/logout}" th:method="post">
-                            <button class="links btn m-2 border-0">Logout</button>
+                            <button class="links navigationLink hover-underline btn m-2 border-0">Logout</button>
                         </form>
                     </li>
                 </ul>

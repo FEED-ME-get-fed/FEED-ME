@@ -58,4 +58,39 @@ const createHiddenInput = (name, amount,i) => {
     `
 }
 
+function formCheck(event){
+    const title = document.getElementById("title").value;
+    const summary = document.getElementById("summary").value;
+    const instruction = document.getElementById("instruction").value;
+    const category = $('#category option:selected').text();
+    const servings = document.getElementById("servings").value;
+    const readyInMin = document.getElementById("time").value;
+
+    console.log(category);
+
+    if(title === "" || summary === "" || instruction === "" || category === "Select..." || servings === "" || readyInMin === ""){
+        event.preventDefault();
+        alert("Please Check that all inputs have been filled");
+
+        if(title === ""){
+            $('.error1').css('visibility', 'visible');
+        }
+        if(summary === ""){
+            $('.error2').css('visibility', 'visible');
+        }
+        if(instruction === ""){
+            $('.error3').css('visibility', 'visible');
+        }
+        if(category === "Select..."){
+            $('.error4').css('visibility', 'visible');
+        }
+        if(servings === ""){
+            $('.error5').css('visibility', 'visible');
+        }
+        if(readyInMin === ""){
+            $('.error6').css('visibility', 'visible');
+        }
+    }
+}
+
 
