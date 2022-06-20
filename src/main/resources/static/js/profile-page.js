@@ -1,6 +1,12 @@
 /**
  * PAGE FUNCTIONS
  */
+// TOOLTIPS
+$(document).ready(function (){
+    $('[data-toggle="tooltip"]').tooltip();
+});
+
+
 // DELETE BTN
 $('.recipe-delete-btn').on('click', function (e) {
     e.preventDefault();
@@ -24,6 +30,8 @@ $('.recipe-edit-btn').on('click', function (e) {
         window.location.href = "/recipes/edit/" + id;
     }
 });
+
+
 
 
 
