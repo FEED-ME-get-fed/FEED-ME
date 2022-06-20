@@ -176,8 +176,8 @@
                             <input type="hidden" name="ingredients_unit" value="#">
                         </div>
                         <div>
-                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
-                            <button class="btn btn-primary" type="button">Add to DB</button>
+                            <button class="btn-grad btn-secondary" type="button" data-dismiss="modal">Close</button>
+                            <button class="btn-grad btn-primary" type="button">Add to DB</button>
                         </div>
                     </form>
                 </div>
@@ -215,33 +215,11 @@
                 <label for="confirm" class="form-label">Confirm Password</label>
                 <input type="password" class="form-control" id="confirm">
             </div>
-            <button id="submit" type="submit" class="btn btn-success col-12">Submit</button>
+            <button id="submit" type="submit" class="btn-grad btn-success col-12">Submit</button>
         </form>
     </div>
 </div>
 
-
-
-<!--MODAL FOR EMAIL ON -->
-<div th:fragment="emailModal" class="modal fade" id="staticBackdropEmail" data-bs-backdrop="static"
-     data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabelEmail">Email This Recipe/ Link to recipe:</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-
-            <div class="modal-body">
-                <!--                <li id="grey-contactus-icon"><a th:href="'mailto:Another Foodie?subject=' + ${recipe.title} + '&body=Hello! I thought you\'d be interested in this recipe!' + ${recipe.info}">Click to send email</a></li>-->
-                <li><a th:href="'#'">Test</a></li>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
 
 
 <!--FOOTER-->
