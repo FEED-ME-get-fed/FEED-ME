@@ -277,7 +277,7 @@
                                             <a class="btn border-0"
                                                th:href="'mailto:Another Foodie' + '?subject=' + ${recipe.title} +
                                                '&body=' + 'Hello! I thought you would be interested in ' +
-                                               ${recipe.title} + ': https://feedme.lol' +
+                                               ${recipe.title} + ': https://recipefeed.online' +
                                                @{/recipes/details/{id}(id=${recipe.id})}">
                                             <i class="fa-regular fa-paper-plane fa-2x p-2"></i>
                                             </a>
@@ -431,7 +431,7 @@
 
     <!--MODAL(S)-->
     <div th:replace="partials/partials.html :: recipe-details-modal"></div>
-    <div th:replace="partials/partials.html :: emailModal"></div>
+<!--    <div th:replace="partials/partials.html :: emailModal"></div>-->
 
 </div>
 
