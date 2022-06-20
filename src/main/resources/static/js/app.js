@@ -433,17 +433,17 @@ function makeModalBody(r){
     
     
                             </div>
-                            <div>
+                            <div class="d-grid gap-3">
                                 <button 
-                                    class="btn-grad btn-secondary" 
+                                    class="btn-grad" 
                                     type="button" 
                                     data-dismiss="modal">
                                         Close
                                 </button>                                
                                 <button 
-                                    class="btn-grad btn-primary" 
+                                    class="btn-grad" 
                                     type="submit">
-                                        Add to Your Feed
+                                        Add to Favourites
                                 </button>
                             </div>
                         </form>
