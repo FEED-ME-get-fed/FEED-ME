@@ -14,6 +14,12 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html" lang="en">
 <head th:replace="partials/partials.html :: head ('Create Your Own')" >
     <link href="multiselect.css" rel="stylesheet">
+    <style>
+        .errors {
+            visibility: hidden;
+            color: red;
+        }
+    </style>
 </head>
 
 <meta charset="UTF-8" />
@@ -28,7 +34,8 @@
                     Create Your Own Recipe
                 </div>
             </div>
-            <form th:action="@{/recipes/create}" th:method="post" th:object="${recipe}">
+
+            <form th:action="@{/recipes/create}" th:method="post" th:object="${recipe}" onsubmit="formCheck(event)">
 
                 <div class="card-body">
                     <!--MAIN-->
@@ -37,7 +44,7 @@
                         <div class="form-group">
                             <label for="title"
                                    class="form-label">
-                                        Title:
+                                 Title: <span class="error1" style="color: red; visibility: hidden;">*</span>
                             </label>
                             <input th:field="*{title}"
                                    name="title"
@@ -50,7 +57,7 @@
                         <div class="form-group mt-3">
                             <label for="summary"
                                    class="form-label">
-                                        Summary:
+                                        Summary: <span class="error2" style="color: red; visibility: hidden;">*</span>
                             </label>
                             <textarea th:field="*{summary}"
                                       rows="5" name="summary"
@@ -64,7 +71,7 @@
                         <div class="form-group mt-3">
                             <label for="instruction"
                                    class="form-label">
-                                        Instructions:
+                                        Instructions: <span class="error3" style="color: red; visibility: hidden;">*</span>
                             </label>
                             <textarea th:field="*{instruction}"
                                       rows="5"
@@ -131,15 +138,12 @@
                             <div class="col-md-4">
                                 <label for="category"
                                        class="form-label mt-1">
-                                    Category:
+                                    Category: <span class="error4" style="color: red; visibility: hidden;">*</span>
                                 </label>
                                 <select name="recipeCategories"
                                         id="category"
                                         class="form-control">
-                                    <option value="blank"
-                                            selected="selected">
-                                                Select...
-                                    </option>
+                                    <option value="blank" selected="selected">Select...</option>
                                     <option th:each="category : *{recipeCategories}" th:value="${category.id}">[[${category.type}]]</option>
 
                                 </select>
@@ -149,7 +153,7 @@
                                 <div class="form-group">
                                     <label for="servings"
                                            class="form-label mt-1">
-                                        Servings Size:
+                                        Servings Size: <span class="error5" style="color: red; visibility: hidden;">*</span>
                                     </label>
                                     <input th:field="*{servingAmount}"
                                            name="servings"
@@ -162,7 +166,7 @@
                                 <div class="form-group">
                                     <label for="time"
                                            class="form-label mt-1">
-                                        Completion Time in Minutes:
+                                        Completion Time in Minutes: <span class="error6" style="color: red; visibility: hidden;">*</span>
                                     </label>
                                     <input th:field="*{readyInMin}"
                                            name="time"
