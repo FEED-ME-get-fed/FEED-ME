@@ -188,10 +188,10 @@
                                             Summary:
                                         </div>
                                         <div>
-                                            <span th:utext="${recipe.summary}">Recipe Summary</span><br><br>
+                                            <span th:utext="${generalServices.removeATags(recipe.summary)}">Recipe Summary</span><br><br>
                                         </div>
                                     </div>
-                                </div>
+                                </div>®
                                 <!--INSTRUCTIONS-->
                                 <div class="tab-pane fade" id="instructions" role="tabpanel">
                                     <div>
