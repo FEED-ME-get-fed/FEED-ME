@@ -92,7 +92,7 @@
                                     <div th:if="${#fields.hasErrors('ingredients')}" style="color: red">No ingredients entered</div>
                                 </div>
                                 <div class="mt-5 d-flex justify-content-center">
-                                     <button class="btn btn-success w-75 mt-3"
+                                     <button class="btn-grad btn-success w-75 mt-3"
                                              id="modal-open-btn"
                                              data-toggle="modal"
                                              data-target="#ing-modal">Please provide ingredients and amounts
@@ -230,7 +230,8 @@
                     </div>
                     <div class="row">
                         <div class="col-12">
-                            <button id="add-recipe-btn" type="submit" class="btn btn-success mx-auto m-3 w-100">Submit</button>
+<!--                            <button id="add-recipe-btn" type="submit" class="btn btn-success mx-auto m-3 w-100">Submit</button>-->
+                            <button class="btn-grad mx-auto my-3 w-100" type="submit" id="add-recipe-btn"><span>Submit</span></button>
                         </div>
                     </div>
                 </div>
