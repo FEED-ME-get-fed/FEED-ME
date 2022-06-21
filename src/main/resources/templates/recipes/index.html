@@ -27,10 +27,10 @@
 
     <!--MAIN-->
     <div class="row justify-content-center">
-        <div class="col-lg-9">
+        <div class="bg-light col-sm-12 col-md-9 col-lg-7 col-xl-7 col-xxl-7">
             <!--CATEGORIES-->
-            <div id="categories-container"
-                 class="d-flex overflow-auto justify-content-between w-100">
+            <div id="categories-container mx-auto"
+                 class="d-flex overflow-auto justify-content-between">
                 <!--USER-->
                 <div sec:authorize="isAuthenticated()" class="mr-4 cat-contents">
                     <div id="profile-picture" class="cat-filter-btn">
@@ -261,11 +261,11 @@
             <!--MAIN BODY-->
             <div class="row mt-2 d-flex justify-content-center">
                 <!--FEED.-->
-                <div class="col-12 col-lg-8 w-75">
+                <div class="col-12">
                     <!--CARDS | ALL RECIPES-->
                     <div id="feed" >
                         <div th:each="recipe: ${recipes}">
-                            <div class="card mt-3 height: 666px">
+                            <div class="card mt-3 height: 667px">
                                 <!--CARD HEADER-->
                                 <div class="card-header">
                                      <div class="row">
@@ -274,7 +274,7 @@
                                             <!--/*@thymesVar id="user" type=""*/-->
                                             <img th:src="${recipe.user != null}? ${recipe.user.avatar} :  'https://source.unsplash.com/random/561x561/?people}'"
                                                  th:alt="${user.username}"
-                                                 class="img-fluid rounded-circle d-none d-md-block about-img px-1">
+                                                 class="img-fluid rounded-circle d-md-block about-img px-1">
                                         </div>
                                         <!--USERNAME-->
                                         <div class="col-10 d-flex align-items-center">
