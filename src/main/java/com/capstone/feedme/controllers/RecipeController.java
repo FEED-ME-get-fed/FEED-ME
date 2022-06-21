@@ -9,6 +9,7 @@ import com.capstone.feedme.repositories.CategoryRepository;
 import com.capstone.feedme.repositories.IngredientRepository;
 import com.capstone.feedme.repositories.RecipeRepository;
 import com.capstone.feedme.repositories.UserRepository;
+import org.springframework.http.converter.json.GsonBuilderUtils;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
@@ -76,6 +77,8 @@ public class RecipeController {
         // API SEARCH MODEL
         provideApiSearchModel(model, "");
 
+        // TOP RATED RECIPES
+        provideTopFiveRatedRecipesModel(model);
 
         return "recipes/index";
     }
@@ -975,5 +978,52 @@ public class RecipeController {
         return ingredients;
     }
 
+    private void provideTopFiveRatedRecipesModel(Model model){
+
+        List<Recipe> recipes = recipesDao.findAll();
+        HashMap<Recipe, Integer> topFiveRatedRecipes = new HashMap<>();
+        HashMap<Recipe, Integer> recipesByTotalRating = new HashMap<>();
+
+        // Count the rating for each recipe
+        for (int i = 0; i < recipes.size(); i++) {
+
+            if(recipes.get(i).getRecipeRatings() != null){
+                long id = recipes.get(i).getId();
+                List<Rating> ratings = ratingsDao.findAllByRecipeId(id);
+                int c = 0;
+                for (int j = 0; j < ratings.size(); j++) {
+                    c += ratings.get(j).getRating();
+                }
+                recipesByTotalRating.put(recipes.get(i), c);
+            }
+        }
+
+
+        // Sort Rated Recipes from least to Most
+        List<Map.Entry<Recipe, Integer> > list = new LinkedList<>(recipesByTotalRating.entrySet());
+
+        Collections.sort(list, new Comparator<Map.Entry<Recipe, Integer> >() {
+            public int compare(Map.Entry<Recipe, Integer> o2,
+                               Map.Entry<Recipe, Integer> o1)
+            {
+                return (o1.getValue()).compareTo(o2.getValue());
+            }
+        });
+
+        HashMap<Recipe, Integer> k = new LinkedHashMap<>();
+        for (Map.Entry<Recipe, Integer> aa : list) {
+            k.put(aa.getKey(), aa.getValue());
+        }
+
+        System.out.println("============================================");
+        k.forEach((recipe, rating) -> {
+            System.out.println("recipe: " + recipe.getTitle() + " | rating: " + rating);
+        });
+
+        System.out.println("------------------------------------------------------");
+
+        model.addAttribute("topRatedRecipes", k);
+
+    }
 
 }  //<--END

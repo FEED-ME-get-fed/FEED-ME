@@ -4,12 +4,14 @@ import com.capstone.feedme.models.Category;
 import com.capstone.feedme.models.Comment;
 import com.capstone.feedme.models.Rating;
 import com.capstone.feedme.models.Recipe;
+import com.capstone.feedme.repositories.RecipeRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -70,5 +72,15 @@ public class GeneralServices {
         return string.replaceAll("<a href=", "<br>Link: ");
 
     }
+
+    public String shortenString(String string, int limit){
+        if(string == "") return "";
+        else if (string.length() > limit) return string;
+        else return string.substring(0, limit) + "...";
+
+    }
+
+
+
 }
 

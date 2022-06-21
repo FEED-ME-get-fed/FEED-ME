@@ -123,6 +123,12 @@ $('.heart-btn').on('click', function (e) {
     }
 })
 
+// TOOLTIP
+// TOOLTIPS
+$(document).ready(function (){
+    $('[data-toggle="tooltip"]').tooltip();
+});
+
 // ACCESS MODAL
 function seeRecipeDetails(id){
     getSpoonRecipeDetailsByID(id);

@@ -107,6 +107,14 @@ html {
     }
 }
 
+@media screen and (max-height: 100vh){
+    #feed {
+        height: 100%;
+        display: block;
+        overflow: scroll;
+    }
+}
+
 
 /*Main Feed*/
 @media screen and (max-width: 389px) {
