@@ -23,6 +23,7 @@
     <!--    can delete later, just to see main body in all the pages for now ^^ -->
     <link rel="stylesheet" th:href="@{/css/styling.css}">
     <link rel="stylesheet" th:href="@{/css/buttonTest.css}">
+    <link rel="stylesheet" th:href="@{/css/registerCard.css}">
 
 
 </head>
@@ -188,8 +189,9 @@
 </div>
 
 <!--REGISTRATION FORM ON HOME/INDEX-->
-<div sec:authorize="!isAuthenticated()" th:fragment="registration" class="container d-flex align-items-center justify-content-center">
-<!--    <div sec:authorize="!isAuthenticated()">-->
+<div sec:authorize="!isAuthenticated()" th:fragment="registration"
+     class="container d-flex align-items-center justify-content-center">
+    <!--    <div sec:authorize="!isAuthenticated()">-->
     <div class="border border rounded-3 p-4 m-5 bg-secondary bg-opacity-10" style="width: 40em">
         <div th:replace="partials/partials.html :: header ('Create an Account')"></div>
         <form th:action="@{/}" method="POST" th:object="${user}" onsubmit="submitForm(event)">
@@ -219,7 +221,6 @@
         </form>
     </div>
 </div>
-
 
 
 <!--FOOTER-->
@@ -291,6 +292,14 @@
     <!--MOD SCRIPTS-->
     <script th:src="@{/js/password-check.js}"></script>
 </section>
+
+<!--s registerCard CARD POPUP TO REGISTER FIXED ON SCREEN-->
+<div sec:authorize="!isAuthenticated()" th:fragment="popup-register">
+    <script th:src="@{/js/registerCard.js}"></script>
+</div>
+<!--     //end THIS POP UP POPUP REGISTER CARD IS IN registerCard.js & index.html -->
+
+
 
 </body>
 </html>
