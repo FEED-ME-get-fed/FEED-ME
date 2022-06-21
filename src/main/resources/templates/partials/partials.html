@@ -22,6 +22,7 @@
     <link rel="stylesheet" th:href="@{/css/deleteLater.css}">
     <!--    can delete later, just to see main body in all the pages for now ^^ -->
     <link rel="stylesheet" th:href="@{/css/styling.css}">
+    <link rel="stylesheet" th:href="@{/css/buttonTest.css}">
 
 
 </head>
@@ -49,19 +50,19 @@
                 <ul class="navbar-nav flex-row flex-end me-auto mb-1 mb-lg-0">
                     <li class="nav-item"
                         th:classappend="${#httpServletRequest.getRequestURI() == '/recipes' ? 'active' : ''}">
-                        <a class="links btn m-2 border-0" th:href="@{/recipes}">Feed</a>
+                        <a class="links navigationLink hover-underline btn m-2 border-0" th:href="@{/recipes}">Feed</a>
                     </li>
                     <li class="nav-item"
                         th:classappend="${#httpServletRequest.getRequestURI() == '/login' ? 'active' : ''}">
-                        <a class="links btn m-2 border-0" th:href="@{/login}">Login</a>
+                        <a class="links navigationLink hover-underline btn m-2 border-0" th:href="@{/login}">Login</a>
                     </li>
                     <li class="nav-item"
                         th:classappend="${#httpServletRequest.getRequestURI() == '/user/register' ? 'active' : ''}">
-                        <a class="links btn m-2 border-0" th:href="@{/user/register}">Register</a>
+                        <a class="links navigationLink hover-underline btn m-2 border-0" th:href="@{/user/register}">Register</a>
                     </li>
                     <li class="nav-item"
                         th:classappend="${#httpServletRequest.getRequestURI() == '/about' ? 'active' : ''}">
-                        <a class="links btn m-2 border-0" th:href="@{/about}">About</a>
+                        <a class="links navigationLink hover-underline btn m-2 border-0" th:href="@{/about}">About</a>
                     </li>
                 </ul>
             </div>
@@ -70,20 +71,20 @@
                 <ul class="navbar-nav flex-row flex-end me-auto">
                     <li class="nav-item m-2"
                         th:classappend="${#httpServletRequest.getRequestURI() == '/recipes' ? 'active' : ''}">
-                        <a class="links btn m-2 border-0" th:href="@{/recipes}">Feed</a>
+                        <a class="links navigationLink hover-underline btn m-2 border-0" th:href="@{/recipes}">Feed</a>
                     </li>
                     <li class="nav-item m-2"
                         th:classappend="${#httpServletRequest.getRequestURI() == '/user/profile' ? 'active' : ''}">
-                        <a class="links btn m-2 border-0" th:href="@{/user/profile}">Profile</a>
+                        <a class="links navigationLink hover-underline btn m-2 border-0" th:href="@{/user/profile}">Profile</a>
                     </li>
                     <li class="nav-item m-2"
                         th:classappend="${#httpServletRequest.getRequestURI() == '/about' ? 'active' : ''}">
-                        <a class="links btn m-2 border-0" th:href="@{/about}">About</a>
+                        <a class="links navigationLink hover-underline btn m-2 border-0" th:href="@{/about}">About</a>
                     </li>
                     <li class="nav-item m-2"
                         th:classappend="${#httpServletRequest.getRequestURI() == '/logout' ? 'active' : ''}">
                         <form th:action="@{/logout}" th:method="post">
-                            <button class="links btn m-2 border-0">Logout</button>
+                            <button class="links navigationLink hover-underline btn m-2 border-0">Logout</button>
                         </form>
                     </li>
                 </ul>
@@ -175,8 +176,8 @@
                             <input type="hidden" name="ingredients_unit" value="#">
                         </div>
                         <div>
-                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
-                            <button class="btn btn-primary" type="button">Add to DB</button>
+                            <button class="btn-grad btn-secondary" type="button" data-dismiss="modal">Close</button>
+                            <button class="btn-grad btn-primary" type="button">Add to DB</button>
                         </div>
                     </form>
                 </div>
@@ -187,7 +188,8 @@
 </div>
 
 <!--REGISTRATION FORM ON HOME/INDEX-->
-<div th:fragment="registration" class="container d-flex align-items-center justify-content-center">
+<div sec:authorize="!isAuthenticated()" th:fragment="registration" class="container d-flex align-items-center justify-content-center">
+<!--    <div sec:authorize="!isAuthenticated()">-->
     <div class="border border rounded-3 p-4 m-5 bg-secondary bg-opacity-10" style="width: 40em">
         <div th:replace="partials/partials.html :: header ('Create an Account')"></div>
         <form th:action="@{/}" method="POST" th:object="${user}" onsubmit="submitForm(event)">
@@ -213,44 +215,23 @@
                 <label for="confirm" class="form-label">Confirm Password</label>
                 <input type="password" class="form-control" id="confirm">
             </div>
-            <button id="submit" type="submit" class="btn btn-success col-12">Submit</button>
+            <button id="submit" type="submit" class="btn-grad btn-success col-12">Submit</button>
         </form>
     </div>
 </div>
 
 
-<!--MODAL FOR EMAIL ON -->
-<div th:fragment="emailModal" class="modal fade" id="staticBackdropEmail" data-bs-backdrop="static"
-     data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabelEmail">Email This Recipe/ Link to recipe:</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-
-            <div class="modal-body">
-                <!--                <li id="grey-contactus-icon"><a th:href="'mailto:Another Foodie?subject=' + ${recipe.title} + '&body=Hello! I thought you\'d be interested in this recipe!' + ${recipe.info}">Click to send email</a></li>-->
-                <li><a th:href="'#'">Test</a></li>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-
 
 <!--FOOTER-->
-<footer th:fragment="footer" class="navbar fixed-bottom">
-    <div class="d-grid col-12">
-        <a class="links btn btn-light bg-light" data-bs-toggle="collapse" href="#collapse1" role="button"
-           aria-expanded="false" aria-controls="collapse1">Developers</a>
+<footer th:fragment="footer" class="bg-light text-center navbar border-0 fixed-bottom">
+    <div class="d-grid col-12 mx-auto">
+        <a class="links btn-light bg-transparent" data-bs-toggle="collapse" href="#collapse1" role="button"
+           aria-expanded="false" aria-controls="collapse1"><i class="bi bi-github"></i> See Developers Githubs</a>
     </div>
-    <div class="row justify-content-center">
-        <div class="col">
+    <div class="row mx-auto">
+        <div class="col mx-auto">
             <!--OUR GITHUBS-->
-            <div class="collapse multi-collapse" id="collapse1">
+            <div class="collapse multi-collapse mx-auto" id="collapse1">
                 <a class="btn btn-outline-dark btn-light m-1" href="https://github.com/Sarguello12" role="button"
                 ><i class="bi bi-github"></i
                 > Samuel Arguello</a>

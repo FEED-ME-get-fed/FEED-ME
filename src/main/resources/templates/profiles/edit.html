@@ -7,7 +7,7 @@
             Dennise Camacho
             Jason Cameron
             Jose Lopez
-            Luise Sanchez
+            Luis Sanchez
 -->
 
 <!DOCTYPE html>
@@ -58,13 +58,13 @@
                     <label for="confirm" class="form-label">Confirm Password</label>
                     <input type="password" class="form-control" id="confirm" >
                 </div>
-                <button id="submit" type="submit" value="post" class="btn btn-primary w-100 my-3">Submit</button>
+                <button class="btn-grad mx-auto my-3 w-100" value="Submit"><span>Submit</span></button>
             </form>
 
             <form th:action="@{/user/delete}" method="post" th:object="${user}" onsubmit="deleteCheck(event)">
                 <div class="container d-flex justify-content-center">
                     <input id="id" type="hidden" th:field="*{id}">
-                    <button class="btn btn-danger my-5" id="delete" type="submit" value="post">Delete Account</button>
+                    <button class="btn-grad1 mx-auto my-3 w-110" type="submit" id="delete" value="post"><span>Delete Account</span></button>
                 </div>
             </form>
         </div>

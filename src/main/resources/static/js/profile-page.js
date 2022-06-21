@@ -32,6 +32,11 @@ $('.recipe-edit-btn').on('click', function (e) {
 });
 
 
+$(document).ready(function (){
+    $('#user-favorites-tab').click();
+});
+
+
 
 
 
