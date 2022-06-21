@@ -33,16 +33,18 @@
                  class="d-flex overflow-auto justify-content-between w-100">
                 <!--USER-->
                 <div sec:authorize="isAuthenticated()" class="mr-4 cat-contents">
-                    <div>
+                    <div id="profile-picture" class="cat-filter-btn">
+                        <a th:href="@{user/profile}">
                             <img th:src="${user.avatar}" alt="px"
                                  style="height: 100px; width: 100px; border-radius: 50%">
                             <div class="text-center pb-2">
                                 <a th:href="@{user/profile}" th:text="${#authentication.principal.username}"></a>
                             </div>
+                        </a>
                     </div>
                 </div>
                 <!--ALL-->
-                <div class="mr-2 cat-contents">
+                <div class="mx-2 cat-contents">
                     <div id="all-recipe-filter" class="cat-filter-btn">
                         <a href="/recipes">
                             <img src="https://source.unsplash.com/random/200x200/?food"
