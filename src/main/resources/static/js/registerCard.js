@@ -2,8 +2,11 @@
 
 $(document).ready(function () {
 
+    //notes to remember
+    //it's ordered this way because if I reverse the order, it throws an error.
     function makeAPopUp() {
-
+        //if 'button[data-target]' is removed, the register link in the div
+        // stops working.
         $(document).on('click', 'button[data-target]', function(e) {
            // console.log('am i even working');
             e.preventDefault();
@@ -20,6 +23,9 @@ $(document).ready(function () {
 
 
 
+        //making a div here because it was difficult (is it doable?)
+        // to make the div appear with setTimeout
+        // if made in partials.html
         let div = document.createElement('div');
         div.innerHTML = `
         <div id="draggable" class="popup selector1">
@@ -34,12 +40,17 @@ $(document).ready(function () {
         </div>
                 `;
         document.body.appendChild(div);
+        // tbh - don't understand appendChild yet but if this is removed
+        //the div doesn't show.
+    //    https://flexiple.com/javascript/javascript-appendchild/
     }
+
 
     function afterXsecondsMakeAPopUp() {
         setTimeout(makeAPopUp, 1999);
+        //could change the time, just fast for presentation.
+        //https://www.w3schools.com/jsref/met_win_settimeout.asp
     }
-
     afterXsecondsMakeAPopUp();
 
 });

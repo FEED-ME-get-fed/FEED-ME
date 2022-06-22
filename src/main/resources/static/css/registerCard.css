@@ -1,3 +1,4 @@
+/*https://java.codeup.com/html-css/css-i/positioning/*/
 .popup {
     background-color: #eeeeee;
     border: 1px solid lightgrey;
@@ -8,7 +9,6 @@
     position: fixed;
     top: 10vh;
     left: 2vh;
-    /* TODO: the popup should set in place 20px away from the bottom right corner screen, even when scrolling */
     /*position: fixed;*/
     /*bottom: 20px;*/
     /*right: 20px;*/
@@ -48,7 +48,6 @@
 .registerCardText {
     margin: 0;
     position: relative;
-
     bottom: 5px;
 }
 
