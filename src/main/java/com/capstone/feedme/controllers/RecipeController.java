@@ -744,7 +744,7 @@ public class RecipeController {
         List<Ingredient> modIngredients = new ArrayList<>();
 
         for (int i = 0; i < oldIngredients.indexOf(oldIngredients); i++) {
-            Ingredient ingredient = new Ingredient();.
+            Ingredient ingredient = new Ingredient();
             ingredient.setIngredientName(ingredientNameInputArray[i]);
             ingredient.setIngredientAmount(ingredientAmountInputArray[i]);
             ingredient.setRecipe(modRecipe);
