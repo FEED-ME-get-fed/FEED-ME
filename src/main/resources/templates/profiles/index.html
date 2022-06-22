@@ -111,9 +111,9 @@
                 <!--TABS-->
                 <ul class="nav nav-tabs justify-content-center text-capitalize small border-0" id="user-tabs" role="tablist">
                     <!--1-->
-                    <li class="nav-item active" role="presentation">
+                    <li class="nav-item" role="presentation">
                         <button
-                                class="links nav-link border-0"
+                                class="links nav-link active border-0 "
                                 id="user-favorites-tab"
                                 data-bs-toggle="tab"
                                 data-bs-target="#user-favorites"
@@ -163,7 +163,7 @@
                         </div>
                     </div>
                     <!--3: recipe created-->
-                    <div class="tab-pane active" id="user-created" role="tabpanel">
+                    <div class="tab-pane " id="user-created" role="tabpanel">
                         <div class="d-flex flex-wrap justify-content-center">
                             <div th:each="cRecipe : ${createdRecipes}" style="width: 200px; margin:10px 25px">
                                 <div style="position: relative;">
