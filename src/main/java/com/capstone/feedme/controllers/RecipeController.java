@@ -743,7 +743,7 @@ public class RecipeController {
         List<Ingredient> oldIngredients = ingredientsDao.findAllByRecipeId(originalId);
         List<Ingredient> modIngredients = new ArrayList<>();
 
-        for (int i = 0; i < oldIngredients.indexOf(oldIngredients); i++) {
+        for (int i = 0; i < oldIngredients.size(); i++) {
             Ingredient ingredient = new Ingredient();
             ingredient.setIngredientName(ingredientNameInputArray[i]);
             ingredient.setIngredientAmount(ingredientAmountInputArray[i]);
